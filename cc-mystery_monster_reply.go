@@ -25,9 +25,9 @@
 	{{(joinStr "" "https://monsterhunter.fandom.com/wiki/" (reReplace " " $MonName "_"))}}
 	{{/* Clear DB Entry to prevent spam from subsequent correct answers */}}
 	{{dbSet .Channel.ID "MM" (sdict 
-	"MonsterName" "" 
-	"Answer" (cslice "")
-	"Img" ""
+		"MonsterName" "" 
+		"Answer" (cslice "")
+		"Img" ""
 	)}}
 	{{execCC 19 nil 10 0}} {{/* Restarts the game */}}
 {{ end }}
