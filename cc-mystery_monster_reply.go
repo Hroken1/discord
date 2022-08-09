@@ -1,3 +1,8 @@
+{{/* 
+	Trigger Type: REGEX
+	Trigger Pattern: .* 
+*/}}
+
 {{/* Get Message & DB Values */}}
 {{ $Guess := .Message.Content }}
 {{ $MonName := ((dbGet .Channel.ID "MM").Value).MonsterName }}
