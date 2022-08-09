@@ -67,7 +67,7 @@
 {{execAdmin "se"
 	"-title" "***MYSTERY MONSTER***" 
 	"-image" (joinStr "" "https://static.wikia.nocookie.net/monsterhunter/images" $randMonImg) 
-	"-desc" "Can you identify the monster?"
+	"-desc" "Type the name in chat"
 	"-footer" "*Click image to enlarge*"
 	"-color" "0000ff"
 }}
