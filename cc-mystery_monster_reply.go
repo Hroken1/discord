@@ -4,6 +4,7 @@
 */}}
 
 {{/* Get Message & DB Values */}}
+{{ $author := "" }} {{ if .Member.Nick }}{{ $author = .Member.Nick }}{{else}}{{ $author := .User.UserName }}
 {{ $Guess := .Message.Content }}
 {{ $MonName := ((dbGet .Channel.ID "MM").Value).MonsterName }}
 {{ $MonAnswer := ((dbGet .Channel.ID "MM").Value).Answer }}
