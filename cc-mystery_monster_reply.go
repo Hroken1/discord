@@ -4,7 +4,7 @@
 */}}
 
 {{/* Get Message & DB Values */}}
-{{ $author := "" }} {{ if .Member.Nick }}{{ $author = .Member.Nick }}{{else}}{{ $author := .User.UserName }}
+{{ $author := "" }} {{ if .Member.Nick }}{{ $author = .Member.Nick }}{{else}}{{ $author = .User.String }}{{end}}
 {{ $Guess := .Message.Content }}
 {{ $MonName := ((dbGet .Channel.ID "MM").Value).MonsterName }}
 {{ $MonAnswer := ((dbGet .Channel.ID "MM").Value).Answer }}
@@ -17,7 +17,7 @@
 {{ end }}
 {{if $IsCorrect }}
 	{{execAdmin "se"
-		"-author" .Member.Nick
+		"-author" $author
 		"-authoricon" (.User.AvatarURL "256")
 		"-title" (joinStr "" "***Correct Answer! - " $MonName "***")
 		"-desc" "Next round will start in `10` seconds!" 
