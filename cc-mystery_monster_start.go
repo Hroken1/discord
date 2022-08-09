@@ -1,3 +1,8 @@
+{{/* 
+	Trigger Type: Command
+	Trigger Pattern: -mm
+*/}}
+
 {{/* Create dictionary */}}
 {{ $mDict := sdict 
     "Aknosom" (sdict "Img" "/2/23/MHRise-Aknosom_Render_001.png" "Answer" (cslice "aknosom"))
