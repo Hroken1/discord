@@ -2,9 +2,12 @@
 	Trigger Type: Command
 	Trigger Pattern: -mm
 */}}
-
-{{ $mm := (dbGet 2000 (randInt (sub (dbCount 2000) 1))).Value }}
-
+ 
+{{/* $mm := (dbGet 2000 (randInt (sub (dbCount 2000) 1))).Value */}}
+ 
+{{ $i := randInt (len ((dbGet 2001 "mmdb").Value)) }}
+{{ $mm := index ((dbGet 2001 "mmdb").Value) $i }}
+ 
 {{/* Output Random Monster */}}
 {{execAdmin "se"
 	"-title" "***A New MYSTERY MONSTER Appeared!!!***" 
