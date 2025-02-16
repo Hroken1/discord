@@ -2,7 +2,7 @@
 	Trigger Type: REGEX
 	Trigger Pattern: .* 
 */}}
-
+ 
 {{/* Get Message & DB Values */}}
 {{ $author := "" }} {{ if .Member.Nick }}{{ $author = .Member.Nick }}{{else}}{{ $author = .User.String }}{{end}}
 {{ $Guess := .Message.Content }}
@@ -30,5 +30,5 @@
 		"Answer" (cslice "")
 		"Img" ""
 	)}}
-	{{execCC 19 nil 10 0}} {{/* Restarts the game */}}
+	{{execCC 7 nil 10 0}} {{/* Restarts the game */}}
 {{ end }}
